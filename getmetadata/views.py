@@ -12,7 +12,7 @@ def getmeta(request):
         d["name"] = i
         d["type"] = 'folder' if os.path.isdir(os.path.abspath(i)) else 'file'
         d["time"] = round(os.path.getctime(i))
-        print(i, 'folder' if os.path.isdir(os.path.abspath(i)) else 'file', round(os.path.getctime(i)))
+        print(d["name"], d["type"], d["time"])
         data.append(d)
 
     return Response(data)
